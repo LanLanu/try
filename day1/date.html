@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var num = prompt("请输入年月日，例如20220204");
+        year = parseInt(num.substring(0, 4));
+        if (parseInt(num.substring(4, 5)) == 0) {
+            var mon = parseInt(num.substring(5, 6));
+        } else {
+            var mon = parseInt(num.substring(4, 6));
+        }
+        if (parseInt(num.substring(6, 7)) == 0) {
+            var day = parseInt(num.substring(7, 8));
+        } else {
+            var day = parseInt(num.substring(6));
+        }
+        var number = 0;
+        var sum = 0;
+        switch (mon - 1) {
+            case 12:
+                number += 31;
+            case 11:
+                number += 30;
+            case 10:
+                number += 31;
+            case 9:
+                number += 30;
+            case 8:
+                number += 31;
+            case 7:
+                number += 31;
+            case 6:
+                number += 30;
+            case 5:
+                number += 31;
+            case 4:
+                number += 30;
+            case 3:
+                number += 31;
+            case 2:
+                if (year % 4 == 0 && year % 100 == 0 && year % 400) {
+                    number += 28;
+                } else {
+                    number += 29;
+                }
+            case 1:
+                number += 31;
+                break;
+        }
+        sum = number + day;
+        alert(sum);
+    </script>
+</body>
+
+</html>

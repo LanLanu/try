@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- // 第五题：小明学习js用了7896709887秒。问：共多少天，多少小时，多少分钟，多少秒?  -->
+    <script>
+        // var number = (60 * 60 * 24) * 4 + 60;
+        var number = 7896709887;
+        var day = parseInt(number / (60 * 60 * 24));
+        var hour = parseInt((number - (day * 24 * 60 * 60)) / (60 * 60));
+        var minute = parseInt((number - (day * 24 * 60 * 60) - hour * 60 * 60) / 60);
+        var mouse = parseInt((number - day * 24 * 60 * 60 - hour * 60 * 60 - minute * 60));
+        alert("共" + day + "天" + hour + "小时" + minute + "分钟" + mouse + "秒")
+    </script>
+</body>
+
+</html>
